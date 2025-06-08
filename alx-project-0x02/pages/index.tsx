@@ -3,7 +3,6 @@
 import Head from 'next/head';
 import Header from '../components/layout/Header';
 
-
 export default function Home() {
   return (
     <>
@@ -18,9 +17,4 @@ export default function Home() {
       </main>
     </>
   );
-}
-
-export interface CardProps {
-  title: string;
-  content: string;
 }
