@@ -1,12 +1,15 @@
 // components/layout/Header.tsx
 import Link from 'next/link';
+import React from 'react';
 
 const Header = () => {
   return (
-    <header className="bg-gray-800 text-white p-4 flex gap-6">
-      <Link href="/home" className="hover:underline">Home</Link>
-      <Link href="/about" className="hover:underline">About</Link>
-      <Link href="/posts" className="hover:underline">Posts</Link>
+    <header style={{ padding: '1rem', background: '#f0f0f0' }}>
+      <nav style={{ display: 'flex', gap: '1rem' }}>
+        <Link href="/home">Home</Link>
+        <Link href="/about">About</Link>
+        <Link href="/posts">Posts</Link>
+      </nav>
     </header>
   );
 };

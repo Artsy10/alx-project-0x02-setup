@@ -1,17 +1,17 @@
-// pages/home.tsx
+// pages/posts.tsx
 import React from 'react';
 import Header from '../components/layout/Header';
 
-const Home = () => {
+const Posts = () => {
   return (
     <>
       <Header />
       <main style={{ padding: '2rem' }}>
-        <h1>Welcome to the Home Page</h1>
-        <p>This is the homepage of our project.</p>
+        <h1>Posts</h1>
+        <p>Here are some posts related to our project.</p>
       </main>
     </>
   );
 };
 
-export default Home;
+export default Posts;
