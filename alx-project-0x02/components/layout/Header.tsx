@@ -1,19 +1,14 @@
 // components/layout/Header.tsx
 import Link from 'next/link';
 
-export default function Header() {
+const Header = () => {
   return (
-    <header>
-      <nav>
-        <ul style={{ display: 'flex', gap: '1rem', listStyle: 'none' }}>
-          <li>
-            <Link href="/home">Home</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-        </ul>
-      </nav>
+    <header className="bg-gray-800 text-white p-4 flex gap-6">
+      <Link href="/home" className="hover:underline">Home</Link>
+      <Link href="/about" className="hover:underline">About</Link>
+      <Link href="/posts" className="hover:underline">Posts</Link>
     </header>
   );
-}
+};
+
+export default Header;

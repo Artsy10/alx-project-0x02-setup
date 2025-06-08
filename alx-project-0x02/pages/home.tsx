@@ -1,5 +1,7 @@
+// pages/home.tsx
 import React, { useState } from 'react';
 import Card from '../components/common/Card';
+import Header from '../components/layout/Header';
 import PostModal from '../components/common/PostModal';
 
 export default function Home() {
@@ -14,25 +16,28 @@ export default function Home() {
   };
 
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold mb-6">Home Page</h1>
+    <>
+      <Header />
+      <div className="p-8">
+        <h1 className="text-3xl font-bold mb-6">Home Page</h1>
 
-      <button
-        onClick={() => setIsModalOpen(true)}
-        className="mb-4 px-4 py-2 bg-green-600 text-white rounded"
-      >
-        + Add New Post
-      </button>
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="mb-4 px-4 py-2 bg-green-600 text-white rounded"
+        >
+          + Add New Post
+        </button>
 
-      {posts.map((post, index) => (
-        <Card key={index} title={post.title} content={post.content} />
-      ))}
+        {posts.map((post, index) => (
+          <Card key={index} title={post.title} content={post.content} />
+        ))}
 
-      <PostModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onSubmit={handleAddPost}
-      />
-    </div>
+        <PostModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          onSubmit={handleAddPost}
+        />
+      </div>
+    </>
   );
 }
