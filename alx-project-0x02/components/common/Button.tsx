@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonProps } from '../../interfaces';
+import { ButtonProps } from '../../interfaces/index';
 
 const sizeClasses = {
   small: 'px-2 py-1 text-sm',
@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`bg-blue-500 text-white ${sizeClasses[size]} ${shape}`}
+      className={`bg-blue-500 text-white ${shape}`}
       onClick={onClick}
     >
       {text}

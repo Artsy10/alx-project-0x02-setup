@@ -47,3 +47,5 @@ const PostModal: React.FC<PostModalProps> = ({ isOpen, onClose, onSubmit }) => {
         </form>
       </div>
     </div>
+  )
+}
