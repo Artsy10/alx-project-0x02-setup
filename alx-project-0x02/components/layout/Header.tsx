@@ -1,11 +1,19 @@
 // components/layout/Header.tsx
+import Link from 'next/link';
 
-const Header = () => {
+export default function Header() {
   return (
-    <header className="bg-blue-500 text-white p-4">
-      <h1 className="text-xl font-bold">My ALX Project</h1>
+    <header>
+      <nav>
+        <ul style={{ display: 'flex', gap: '1rem', listStyle: 'none' }}>
+          <li>
+            <Link href="/home">Home</Link>
+          </li>
+          <li>
+            <Link href="/about">About</Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
-};
-
-export default Header; // ✅ This is required
+}
