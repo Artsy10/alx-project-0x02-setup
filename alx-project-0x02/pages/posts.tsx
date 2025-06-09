@@ -1,27 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PostCard from '../components/common/PostCard';
 import { PostProps } from '../interfaces';
 
-const PostsPage = () => {
-  const [posts, setPosts] = useState<PostProps[]>([]);
+interface PostsPageProps {
+  posts: PostProps[];
+}
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-      const data = await res.json();
-      // Map JSONPlaceholder format to our PostProps
-      const formattedPosts = data.map((post: any) => ({
-        title: post.title,
-        content: post.body,
-        userId: post.userId,
-        id: post.id,
-      }));
-      setPosts(formattedPosts);
-    };
-
-    fetchPosts();
-  }, []);
-
+const PostsPage: React.FC<PostsPageProps> = ({ posts }) => {
   return (
     <div style={{ padding: '2rem' }}>
       <h1 className="text-2xl font-bold mb-4">Posts</h1>
@@ -35,6 +20,24 @@ const PostsPage = () => {
       ))}
     </div>
   );
+};
+
+export const getStaticProps = async () => {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const data = await res.json();
+
+  const posts: PostProps[] = data.map((post: any) => ({
+    id: post.id,
+    title: post.title,
+    content: post.body,
+    userId: post.userId,
+  }));
+
+  return {
+    props: {
+      posts,
+    },
+  };
 };
 
 export default PostsPage;
