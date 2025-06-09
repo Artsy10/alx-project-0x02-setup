@@ -1,6 +1,7 @@
 // pages/home.tsx
 import React from 'react';
 import Header from '@/components/layout/Header';
+import Card from '@/components/common/Card';
 
 const Home = () => {
   return (
